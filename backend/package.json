@@ -1,5 +1,5 @@
 {
-  "name": "@ideanick/backend",
+  "name": "@fullstack-react-node/backend",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@trpc/server": "^10.45.2",
+    "cors": "^2.8.5",
     "express": "^4.21.2"
   }
 }
