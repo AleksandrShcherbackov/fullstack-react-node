@@ -1,4 +1,5 @@
 import { TrpcProvider } from './lib/trpc'
+import { AllUsersPage } from './pages/AllUsersPage'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -14,6 +15,7 @@ export const App = () => {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <AllUsersPage />
     </TrpcProvider>
   )
 }
