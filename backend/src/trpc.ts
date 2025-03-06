@@ -1,15 +1,17 @@
 import { initTRPC } from "@trpc/server";
+import _ from 'lodash';
 
-const users = [
-    { id: '0', name: 'Alex', surname: 'Ivanov' },
-    { id: '1', name: 'Ivan', surname: 'Petrov' },
-    { id: '2', name: 'Petr', surname: 'Sergeev' },
-];
-
+const users = _.times(10, (i) => ({
+    id: String(i),
+    name: `name ${i}`,
+    surname: `surname ${i}`,
+    text: _.times(10, () => `<p>Text of paragraf ${1} of user ${i}</p>`).join(''),
+}));
 const trpc = initTRPC.create();
+
 export const trpcRouter = trpc.router({
     getUsers: trpc.procedure.query(() => {
-        return { users };
+        return { users: users.map(({ id, name, surname }) => ({ id, name, surname })) };
     })
 });
 
